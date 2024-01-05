@@ -14,3 +14,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+⚡ I'm not sure what I'm doing
+💬 roller derby
+😄 she/her
