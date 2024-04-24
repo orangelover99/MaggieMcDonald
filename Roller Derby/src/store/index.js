@@ -1,0 +1,1 @@
+import { createStore as _createStore } from 'vuex';
