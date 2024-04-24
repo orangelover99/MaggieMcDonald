@@ -2,7 +2,7 @@ let xp = 0;
 let loveHealth = 100;
 let money = 50;
 let currentWeapon = 0;
-let fighting;
+let askingOut;
 let monsterHealth;
 let inventory = ["barette"];
 
@@ -41,33 +41,33 @@ const monsters = [
 ]
 const locations = [
   {
-    name: "town square",
+    name: "the restaurant",
     "button text": ["Go to store", "Go to cave", "Try to pay rent"],
-    "button functions": [goStore, goCave, payRent],
-    text: "You are in the town square. You see a sign that says \"Store\"."
+    "button functions": [askingOutJeff, askingOutZeke, askingOutJimmyJr],
+    text: "You are in the restaurant. You see a sign that says \"Store\"."
   },
   {
     name: "store",
-    "button text": ["Buy 10 health (10 money)", "Buy weapon (30 money)", "Go to town square"],
-    "button functions": [getLoveHealth, buyWeapon, goTown],
+    "button text": ["Buy 10 health (10 money)", "Buy weapon (30 money)", "Go to the restaurant"],
+    "button functions": [getLoveHealth, buyWeapon, goRestaurant],
     text: "You enter the store."
   },
   {
     name: "cave",
-    "button text": ["Avoid Teddy's stories", "Fight Jimmy Pesto", "Go to town square"],
-    "button functions": [avoidTeddysStories, fightJimmyPesto, goTown],
+    "button text": ["Ask out Jeff the Ghost", "Ask out Zeke", "Go to the restaurant"],
+    "button functions": [askingOutJeff, askingOutZeke, goRestaurant],
     text: "You enter the cave. You see some monsters."
   },
   {
-    name: "fight",
-    "button text": ["Attack", "Dodge", "Run"],
-    "button functions": [attack, dodge, goTown],
-    text: "You are fighting a monster."
+    name: "Ask Out",
+    "button text": ["Charm", "Dodge", "Run"],
+    "button functions": [charm, dodge, goRestaurant],
+    text: "You are asking out a boy."
   },
   {
     name: "kill monster",
-    "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, goTown],
+    "button text": ["Go to the restaurant", "Go to the restaurant", "Go to the restaurant"],
+    "button functions": [goRestaurant, goRestaurant, goRestaurant],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find money.'
   },
   {
@@ -80,12 +80,12 @@ const locations = [
     name: "win", 
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
     "button functions": [restart, restart, restart], 
-    text: "You defeat the Fischoeder! YOU WIN THE GAME! &#x1F389;" 
+    text: "Jimmy Jr says yes, but you realize that Zeke is way better. So you ask him out, he says yes! YOU WIN THE GAME! &#x1F389;" 
   },
   {
     name: "easter egg",
-    "button text": ["2", "8", "Go to town square?"],
-    "button functions": [pickTwo, pickEight, goTown],
+    "button text": ["2", "8", "Go to the restaurant?"],
+    "button functions": [pickTwo, pickEight, goRestaurant],
     text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
   }
 ];
@@ -93,7 +93,7 @@ const locations = [
 // initialize buttons
 button1.onclick = goStore;
 button2.onclick = goCave;
-button3.onclick = payRent;
+button3.onclick = askingOutJimmyJr;
 
 function update(location) {
   monsterStats.style.display = "none";
@@ -106,7 +106,7 @@ function update(location) {
   text.innerHTML = location.text;
 }
 
-function goTown() {
+function goRestaurant() {
   update(locations[0]);
 }
 
@@ -163,33 +163,33 @@ function sellWeapon() {
   }
 }
 
-function avoidTeddysStories() {
-  fighting = 0;
-  goFight();
+function askingOutJeff() {
+  askingOut = 0;
+  askingOut();
 }
 
-function fightJimmyPesto() {
-  fighting = 1;
-  goFight();
+function askingOutZeke() {
+  askingOut = 1;
+  askingOut();
 }
 
-function payRent() {
-  fighting = 2;
-  goFight();
+function askingOutJimmyJr() {
+  askingOut = 2;
+  askingOut();
 }
 
-function goFight() {
+function askingOut() {
   update(locations[3]);
-  monsterHealth = monsters[fighting].loveHealth;
+  monsterHealth = monsters[askingOut].loveHealth;
   monsterStats.style.display = "block";
-  monsterName.innerText = monsters[fighting].name;
+  monsterName.innerText = monsters[askingOut].name;
   monsterHealthText.innerText = monsterHealth;
 }
 
-function attack() {
-  text.innerText = "The " + monsters[fighting].name + " attacks.";
-  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-  loveHealth -= getMonsterAttackValue(monsters[fighting].level);
+function charm() {
+  text.innerText = monsters[askingOut].name + " resists your charm.";
+  text.innerText += " You charm it with your " + weapons[currentWeapon].name + ".";
+  loveHealth -= getMonsterResistanceValue(monsters[askingOut].level);
   if (isMonsterHit()) {
     monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
   } else {
@@ -200,7 +200,7 @@ function attack() {
   if (loveHealth <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    if (fighting === 2) {
+    if (askingOut === 2) {
       winGame();
     } else {
       defeatMonster();
@@ -212,7 +212,7 @@ function attack() {
   }
 }
 
-function getMonsterAttackValue(level) {
+function getMonsterResistanceValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
   return hit > 0 ? hit : 0;
@@ -223,12 +223,12 @@ function isMonsterHit() {
 }
 
 function dodge() {
-  text.innerText = "You dodge the attack from the " + monsters[fighting].name;
+  text.innerText = "You dodge " + monsters[askingOut].name + " resisting your charm.";
 }
 
 function defeatMonster() {
-  money += Math.floor(monsters[fighting].level * 6.7);
-  xp += monsters[fighting].level;
+  money += Math.floor(monsters[askingOut].level * 6.7);
+  xp += monsters[askingOut].level;
   moneyText.innerText = money;
   xpText.innerText = xp;
   update(locations[4]);
@@ -251,7 +251,7 @@ function restart() {
   moneyText.innerText = money;
   loveHealthText.innerText = loveHealth;
   xpText.innerText = xp;
-  goTown();
+  goRestaurant();
 }
 
 function easterEgg() {
