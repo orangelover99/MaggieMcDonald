@@ -1,9 +1,9 @@
 let xp = 0;
 let loveHealth = 100;
 let money = 50;
-let currentWeapon = 0;
+let currentTactic = 0;
 let askingOut;
-let monsterHealth;
+let boyHealth;
 let inventory = ["barette"];
 
 const button1 = document.querySelector('#button1');
@@ -13,16 +13,16 @@ const text = document.querySelector("#text");
 const xpText = document.querySelector("#xpText");
 const loveHealthText = document.querySelector("#loveHealthText");
 const moneyText = document.querySelector("#moneyText");
-const monsterStats = document.querySelector("#monsterStats");
-const monsterName = document.querySelector("#monsterName");
-const monsterHealthText = document.querySelector("#monsterHealth");
-const weapons = [
+const boyStats = document.querySelector("#boyStats");
+const boyName = document.querySelector("#boyName");
+const boyHealthText = document.querySelector("#boyHealth");
+const tactics = [
   { name: 'barette', power: 5 },
   { name: 'knowledge of the Equestranauts', power: 30 },
   { name: 'tenacity', power: 50 },
   { name: 'confidence', power: 100 }
 ];
-const monsters = [
+const boys = [
   {
     name: "Jeff the Ghost",
     level: 2,
@@ -43,20 +43,20 @@ const locations = [
   {
     name: "the restaurant",
     "button text": ["Go to store", "Go to cave", "Try to pay rent"],
-    "button functions": [askingOutJeff, askingOutZeke, askingOutJimmyJr],
+    "button functions": [goBedroom, goSchool, askingOutJimmyJr],
     text: "You are in the restaurant. You see a sign that says \"Store\"."
   },
   {
-    name: "store",
-    "button text": ["Buy 10 health (10 money)", "Buy weapon (30 money)", "Go to the restaurant"],
-    "button functions": [getLoveHealth, buyWeapon, goRestaurant],
-    text: "You enter the store."
+    name: "Tina's Bedroom",
+    "button text": ["Write erotic friend fiction (10 money)", "Learn tactic (30 money)", "Go to the restaurant"],
+    "button functions": [getLoveHealth, learnTactic, goRestaurant],
+    text: "You enter Tina's bedroom."
   },
   {
-    name: "cave",
+    name: "school",
     "button text": ["Ask out Jeff the Ghost", "Ask out Zeke", "Go to the restaurant"],
     "button functions": [askingOutJeff, askingOutZeke, goRestaurant],
-    text: "You enter the cave. You see some monsters."
+    text: "You enter the school. You see some boys."
   },
   {
     name: "Ask Out",
@@ -65,16 +65,16 @@ const locations = [
     text: "You are asking out a boy."
   },
   {
-    name: "kill monster",
+    name: "Boy accepts date",
     "button text": ["Go to the restaurant", "Go to the restaurant", "Go to the restaurant"],
     "button functions": [goRestaurant, goRestaurant, goRestaurant],
-    text: 'The monster screams "Arg!" as it dies. You gain experience points and find money.'
+    text: 'The boy screams "Arg!" as it dies. You gain love experience points and find money.'
   },
   {
-    name: "lose",
+    name: "rejected",
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
-    text: "You die. &#x2620;"
+    text: "You got rejected. &#x2620;"
   },
   { 
     name: "win", 
@@ -91,12 +91,12 @@ const locations = [
 ];
 
 // initialize buttons
-button1.onclick = goStore;
-button2.onclick = goCave;
+button1.onclick = goBedroom;
+button2.onclick = goSchool;
 button3.onclick = askingOutJimmyJr;
 
 function update(location) {
-  monsterStats.style.display = "none";
+  boyStats.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
   button3.innerText = location["button text"][2];
@@ -110,11 +110,11 @@ function goRestaurant() {
   update(locations[0]);
 }
 
-function goStore() {
+function goBedroom() {
   update(locations[1]);
 }
 
-function goCave() {
+function goSchool() {
   update(locations[2]);
 }
 
@@ -131,35 +131,35 @@ function getLoveHealth() {
   }
 }
 
-function buyWeapon() {
-  if (currentWeapon < weapons.length - 1) {
+function learnTactic() {
+  if (currentTactic < tactics.length - 1) {
     if (money >= 30) {
         money -= 30;
-      currentWeapon++;
+      currentTactic++;
       moneyText.innerText = money;
-      let newWeapon = weapons[currentWeapon].name;
-      text.innerText = "You now have a " + newWeapon + ".";
-      inventory.push(newWeapon);
+      let newTactic = tactics[currentTactic].name;
+      text.innerText = "You now have a " + newTactic + ".";
+      inventory.push(newTactic);
       text.innerText += " In your inventory you have: " + inventory;
     } else {
-      text.innerText = "You do not have enough money to buy a weapon.";
+      text.innerText = "You do not have enough money to buy a tactics.";
     }
   } else {
-    text.innerText = "You already have the most powerful weapon!";
-    button2.innerText = "Sell weapon for 15 money";
-    button2.onclick = sellWeapon;
+    text.innerText = "You already have the most powerful tactics!";
+    button2.innerText = "Forget tactics for 15 money";
+    button2.onclick = forgetTactic;
   }
 }
 
-function sellWeapon() {
+function forgetTactic() {
   if (inventory.length > 1) {
     money += 15;
     moneyText.innerText = money;
-    let currentWeapon = inventory.shift();
-    text.innerText = "You sold a " + currentWeapon + ".";
+    let currentTactic = inventory.shift();
+    text.innerText = "You sold a " + currentTactic + ".";
     text.innerText += " In your inventory you have: " + inventory;
   } else {
-    text.innerText = "Don't sell your only weapon!";
+    text.innerText = "Don't forget your only tactic!";
   }
 }
 
@@ -180,61 +180,61 @@ function askingOutJimmyJr() {
 
 function askingOut() {
   update(locations[3]);
-  monsterHealth = monsters[askingOut].loveHealth;
-  monsterStats.style.display = "block";
-  monsterName.innerText = monsters[askingOut].name;
-  monsterHealthText.innerText = monsterHealth;
+  boyHealth = boys[askingOut].loveHealth;
+  boyStats.style.display = "block";
+  boyName.innerText = boys[askingOut].name;
+  boyHealthText.innerText = boyHealth;
 }
 
 function charm() {
-  text.innerText = monsters[askingOut].name + " resists your charm.";
-  text.innerText += " You charm it with your " + weapons[currentWeapon].name + ".";
-  loveHealth -= getMonsterResistanceValue(monsters[askingOut].level);
-  if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+  text.innerText = boys[askingOut].name + " resists your charm.";
+  text.innerText += " You charm it with your " + tactics[currentTactic].name + ".";
+  loveHealth -= getBoyResistanceValue(boys[askingOut].level);
+  if (isBoyHit()) {
+    boyHealth -= tactics[currentTactic].power + Math.floor(Math.random() * xp) + 1;    
   } else {
     text.innerText += " You miss.";
   }
   loveHealthText.innerText = loveHealth;
-  monsterHealthText.innerText = monsterHealth;
+  boyHealthText.innerText = boyHealth;
   if (loveHealth <= 0) {
-    lose();
-  } else if (monsterHealth <= 0) {
+    rejected();
+  } else if (boyHealth <= 0) {
     if (askingOut === 2) {
       winGame();
     } else {
-      defeatMonster();
+      defeatBoy();
     }
   }
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";
-    currentWeapon--;
+    currentTactic--;
   }
 }
 
-function getMonsterResistanceValue(level) {
+function getBoyResistanceValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
   return hit > 0 ? hit : 0;
 }
 
-function isMonsterHit() {
+function isBoyHit() {
   return Math.random() > .2 || loveHealth < 20;
 }
 
 function dodge() {
-  text.innerText = "You dodge " + monsters[askingOut].name + " resisting your charm.";
+  text.innerText = "You dodge " + boys[askingOut].name + " resisting your charm.";
 }
 
-function defeatMonster() {
-  money += Math.floor(monsters[askingOut].level * 6.7);
-  xp += monsters[askingOut].level;
+function defeatBoy() {
+  money += Math.floor(boys[askingOut].level * 6.7);
+  xp += boys[askingOut].level;
   moneyText.innerText = money;
   xpText.innerText = xp;
   update(locations[4]);
 }
 
-function lose() {
+function rejected() {
   update(locations[5]);
 }
 
@@ -246,7 +246,7 @@ function restart() {
   xp = 0;
   loveHealth = 100;
   money = 50;
-  currentWeapon = 0;
+  currentTactic = 0;
   inventory = ["chalk"];
   moneyText.innerText = money;
   loveHealthText.innerText = loveHealth;
@@ -284,7 +284,7 @@ function pick(guess) {
     loveHealth -= 10;
     loveHealthText.innerText = loveHealth;
     if (loveHealth <= 0) {
-      lose();
+      rejected();
     }
   }
 }
