@@ -15,7 +15,7 @@ const loveHealthText = document.querySelector("#loveHealthText");
 const moneyText = document.querySelector("#moneyText");
 const boyStats = document.querySelector("#boyStats");
 const boyName = document.querySelector("#boyName");
-const boyHealthText = document.querySelector("#boyHealth");
+const boyHealthText = document.querySelector("#boyHealthText");
 const tactics = [
   { name: 'barette', power: 5 },
   { name: 'knowledge of the Equestranauts', power: 30 },
@@ -42,9 +42,9 @@ const boys = [
 const locations = [
   {
     name: "the restaurant",
-    "button text": ["Go to store", "Go to cave", "Try to pay rent"],
+    "button text": ["Go to bedroom", "Go to school", "Ask out Jimmy Jr."],
     "button functions": [goBedroom, goSchool, askingOutJimmyJr],
-    text: "You are in the restaurant. You see a sign that says \"Store\"."
+    text: "You are in the restaurant. You know your room is upstairs in the apartment."
   },
   {
     name: "Tina's Bedroom",
@@ -53,7 +53,7 @@ const locations = [
     text: "You enter Tina's bedroom."
   },
   {
-    name: "school",
+    name: "School",
     "button text": ["Ask out Jeff the Ghost", "Ask out Zeke", "Go to the restaurant"],
     "button functions": [askingOutJeff, askingOutZeke, goRestaurant],
     text: "You enter the school. You see some boys."
@@ -124,7 +124,7 @@ function getLoveHealth() {
     loveHealth += 10;
     moneyText.innerText = money;
     //start of new changes
-    text.innerText = "After writing a new chapter of erotic friend fiction, your faith in love gets restored.";
+    //text.innerText = "After writing a new chapter of erotic friend fiction, your faith in love gets restored.";
     loveHealthText.innerText = loveHealth;
   } else {
     text.innerText = "You do not have enough money to buy health.";
@@ -165,25 +165,25 @@ function forgetTactic() {
 
 function askingOutJeff() {
   askingOut = 0;
-  askingOut();
+  askOut();
 }
 
 function askingOutZeke() {
   askingOut = 1;
-  askingOut();
+  askOut();
 }
 
 function askingOutJimmyJr() {
   askingOut = 2;
-  askingOut();
+  askOut();
 }
 
-function askingOut() {
+function askOut() {
   update(locations[3]);
   boyHealth = boys[askingOut].loveHealth;
   boyStats.style.display = "block";
   boyName.innerText = boys[askingOut].name;
-  boyHealthText.innerText = boyHealth;
+  boyHealthText.innerText = boyHealthText;
 }
 
 function charm() {
@@ -247,7 +247,7 @@ function restart() {
   loveHealth = 100;
   money = 50;
   currentTactic = 0;
-  inventory = ["chalk"];
+  inventory = ["barette"];
   moneyText.innerText = money;
   loveHealthText.innerText = loveHealth;
   xpText.innerText = xp;
