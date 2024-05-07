@@ -96,6 +96,7 @@ button2.onclick = goSchool;
 button3.onclick = askingOutJimmyJr;
 
 function update(location) {
+  //still good here!
   boyStats.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
@@ -181,6 +182,7 @@ function askingOutJimmyJr() {
 function askOut() {
   update(locations[3]);
   boyHealth = boys[askingOut].loveHealth;
+  //need to change here so that it goes next to the picture
   boyStats.style.display = "block";
   boyName.innerText = boys[askingOut].name;
   boyHealthText.innerText = boyHealthText;

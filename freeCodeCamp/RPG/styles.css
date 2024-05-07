@@ -10,10 +10,17 @@ body {
   
   #game {
     max-width: 75vw;
-    max-height: 400px;
+    height: 75vh;
     background-color: rgb(220, 86, 79);
     color: #ffffff;
-    margin: 30px auto 0px;
+    /* display: flex;
+    flex-direction: column;
+    grid-template-areas:
+    "sidebar stats sidebar"
+    "sidebar controls sidebar"
+    "sidebar text sidebar";
+    grid-template-rows: 1fr 2fr 4fr; */
+    margin: 30px auto;
     padding: 10px;
   }
   
@@ -23,6 +30,22 @@ body {
     padding: 5px;
     color: #0a0a23;
   }
+
+  /* #stats {
+    grid-area: stats;
+  }
+
+  #controls {
+    grid-area: controls;
+  }
+
+  div.sidebar {
+    grid-area: sidebar;
+  }
+
+  #text {
+    grid-area: words;
+  } */
   
   #boyStats {
     display: none;

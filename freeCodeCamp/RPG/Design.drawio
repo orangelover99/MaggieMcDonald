@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2024-05-07T14:07:17.105Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="MoCw9sCbdRJltNntK-Bg" version="24.3.1" type="device">
+  <diagram name="Page-1" id="KoLyuwXheZ_-bWvX9VEP">
+    <mxGraphModel dx="794" dy="1502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="227rK4pDY7l56xrwkvpc-11" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="80" y="-20" width="400" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="227rK4pDY7l56xrwkvpc-11">
+          <mxGeometry width="400" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-2" value="Pic?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-11">
+          <mxGeometry x="27.5" y="50" width="345" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-3" value="Buttons" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-11">
+          <mxGeometry x="20" y="350" width="355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-4" value="Text" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-11">
+          <mxGeometry x="40" y="230" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-5" value="XP&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;LoveHealth&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; Money" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-11">
+          <mxGeometry x="25" y="10" width="355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-14" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="580" y="-10" width="400" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-6" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="227rK4pDY7l56xrwkvpc-14">
+          <mxGeometry width="400" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-7" value="Pic of boy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-14">
+          <mxGeometry x="25" y="50" width="175" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-8" value="Buttons" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-14">
+          <mxGeometry x="20" y="350" width="355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-9" value="Text" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-14">
+          <mxGeometry x="40" y="230" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-10" value="XP&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;LoveHealth&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; Money" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-14">
+          <mxGeometry x="25" y="10" width="355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="227rK4pDY7l56xrwkvpc-13" value="Boy Stats?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="227rK4pDY7l56xrwkvpc-14">
+          <mxGeometry x="220" y="60" width="150" height="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
