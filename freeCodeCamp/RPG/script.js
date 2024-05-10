@@ -14,6 +14,7 @@ const xpText = document.querySelector("#xpText");
 const loveHealthText = document.querySelector("#loveHealthText");
 const moneyText = document.querySelector("#moneyText");
 const boyStats = document.querySelector("#boyStats");
+const screen = document.querySelector('#screen');
 const boyName = document.querySelector("#boyName");
 const boyHealthText = document.querySelector("#boyHealthText");
 const tactics = [
@@ -40,6 +41,9 @@ const boys = [
   }
 ]
 const locations = [
+  //assign an asset so that each location has a picture?
+  //if i do that, then location needs to add another thing for screen
+  //and we have to query select above for screen
   {
     name: "the restaurant",
     "button text": ["Go to bedroom", "Go to school", "Ask out Jimmy Jr."],
@@ -182,8 +186,8 @@ function askingOutJimmyJr() {
 function askOut() {
   update(locations[3]);
   boyHealth = boys[askingOut].loveHealth;
-  //need to change here so that it goes next to the picture
-  boyStats.style.display = "block";
+  screen.style.display = "flex";
+  boyStats.style.display = "flex";
   boyName.innerText = boys[askingOut].name;
   boyHealthText.innerText = boyHealthText;
 }

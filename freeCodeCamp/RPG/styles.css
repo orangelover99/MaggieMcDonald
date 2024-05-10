@@ -10,12 +10,13 @@ body {
   
   #game {
     max-width: 75vw;
-    height: 75vh;
+    height: 90vh;
     background-color: rgb(220, 86, 79);
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    margin: 30px auto;
+    align-items: center;
+    margin: 20px auto;
     padding: 10px;
   }
   
@@ -26,22 +27,26 @@ body {
     color: #0a0a23;
   }
 
-  /* #stats {
-    grid-area: stats;
-  }
-
-  #controls {
-    grid-area: controls;
-  }
-
-  div.sidebar {
-    grid-area: sidebar;
+  #container {
+    flex-grow: 6;
+    width: 67.5vw;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    display: flex;
   }
 
   #text {
-    grid-area: words;
-  } */
+    flex-grow: 2.5;
+    width: 67.5vw;
+    margin-bottom: 5px;
+  }
   
+  #screen {
+    flex-basis: 100%;
+  }
+
+
   #boyStats {
     display: none;
     border: 1px solid #0a0a23;
