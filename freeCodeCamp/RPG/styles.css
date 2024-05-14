@@ -8,6 +8,10 @@ body {
     color: rgb(166, 185, 222);
     text-emphasis-color: rgb(51, 75, 110);
     font-family: "Bob's Burgers";
+    text-align: center;
+    font-size: 3rem;
+    -webkit-text-fill-color: rgb(51, 75, 110);
+    margin-bottom: 0.4em;
     
     /* get Tina's Blue and the bobs burgers text
     we're working on it!!!!
@@ -28,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto;
+    margin: 5px auto;
     padding: 10px;
   }
   
@@ -37,6 +41,7 @@ body {
     border: 1px solid #0a0a23;
     padding: 5px;
     color: #0a0a23;
+    font-size: 1.5rem;
   }
 
   #container {
@@ -57,6 +62,12 @@ body {
   
   #screen {
     flex-basis: 100%;
+  }
+
+  img {
+    max-width: 30vw;
+    height: auto;
+    object-fit: cover;
   }
 
 

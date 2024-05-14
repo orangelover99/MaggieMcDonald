@@ -115,7 +115,7 @@ function update(location) {
   button3.onclick = location["button functions"][2];
   text.innerHTML = location.text;
   //can't get this picture to work, keep on trying!!!
-  view.img = location.currentView;
+  view.src = location.currentView;
 }
 
 function goRestaurant() {
