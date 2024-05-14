@@ -15,6 +15,7 @@ const loveHealthText = document.querySelector("#loveHealthText");
 const moneyText = document.querySelector("#moneyText");
 const boyStats = document.querySelector("#boyStats");
 const screen = document.querySelector('#screen');
+const view = document.querySelector("#currentView");
 const boyName = document.querySelector("#boyName");
 const boyHealthText = document.querySelector("#boyHealthText");
 const tactics = [
@@ -48,7 +49,9 @@ const locations = [
     name: "the restaurant",
     "button text": ["Go to bedroom", "Go to school", "Ask out Jimmy Jr."],
     "button functions": [goBedroom, goSchool, askingOutJimmyJr],
-    text: "You are in the restaurant. You know your room is upstairs in the apartment."
+    text: "You are in the restaurant. You know your room is upstairs in the apartment.",
+    //not sure if this is a good idea!
+    currentView: "img/inside_restaurant.webp"
   },
   {
     name: "Tina's Bedroom",
@@ -98,6 +101,8 @@ const locations = [
 button1.onclick = goBedroom;
 button2.onclick = goSchool;
 button3.onclick = askingOutJimmyJr;
+// view.img = "img/lost_game.png";
+// not exactly working
 
 function update(location) {
   //still good here!
@@ -109,6 +114,8 @@ function update(location) {
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
   text.innerHTML = location.text;
+  //can't get this picture to work, keep on trying!!!
+  view.img = location.currentView;
 }
 
 function goRestaurant() {
