@@ -28,17 +28,20 @@ const boys = [
   {
     name: "Jeff the Ghost",
     level: 2,
-    loveHealth: 15
+    loveHealth: 15,
+    currentView: "img/jeff_the_ghost.webp"
   },
   {
     name: "Zeke",
     level: 8,
-    loveHealth: 60
+    loveHealth: 60,
+    currentView: "img/zeke.webp"
   },
   {
     name: "Jimmy Jr.",
     level: 20,
-    loveHealth: 300
+    loveHealth: 300,
+    currentView: "img/jimmy_jr.webp"
   }
 ]
 const locations = [
@@ -57,7 +60,8 @@ const locations = [
     name: "Tina's Bedroom",
     "button text": ["Write erotic friend fiction (10 money)", "Learn tactic (30 money)", "Go to the restaurant"],
     "button functions": [getLoveHealth, learnTactic, goRestaurant],
-    text: "You enter Tina's bedroom."
+    text: "You enter Tina's bedroom.",
+    currentView: "img/tina_bedroom.webp"
   },
   {
     name: "School",
