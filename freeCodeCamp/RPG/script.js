@@ -54,7 +54,7 @@ const locations = [
     "button functions": [goBedroom, goSchool, askingOutJimmyJr],
     text: "You are in the restaurant. You know your room is upstairs in the apartment.",
     //not sure if this is a good idea!
-    currentView: "img/inside_restaurant.webp"
+    currentView: "img/inside-resturant-trial-2.png"
   },
   {
     name: "Tina's Bedroom",
@@ -197,6 +197,7 @@ function askingOutJimmyJr() {
 function askOut() {
   update(locations[3]);
   boyHealth = boys[askingOut].loveHealth;
+  //here is where I am not sure how it appears
   screen.style.display = "flex";
   boyStats.style.display = "flex";
   boyName.innerText = boys[askingOut].name;
