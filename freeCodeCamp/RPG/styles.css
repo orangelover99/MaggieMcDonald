@@ -68,6 +68,14 @@ body {
     width: 100%;
   }
 
+  /* #currentView{
+    z-index: -1;
+  }
+
+  #boyView {
+    z-index: 1;
+  } */
+
 
   #boyStats {
     display: none;

@@ -16,6 +16,7 @@ const moneyText = document.querySelector("#moneyText");
 const boyStats = document.querySelector("#boyStats");
 const screen = document.querySelector('#screen');
 const view = document.querySelector("#currentView");
+const boyView = document.querySelector("#boyView");
 const boyName = document.querySelector("#boyName");
 const boyHealthText = document.querySelector("#boyHealthText");
 const tactics = [
@@ -67,13 +68,15 @@ const locations = [
     name: "School",
     "button text": ["Ask out Jeff the Ghost", "Ask out Zeke", "Go to the restaurant"],
     "button functions": [askingOutJeff, askingOutZeke, goRestaurant],
-    text: "You enter the school. You see some boys."
+    text: "You enter the school. You see some boys.",
+    currentView: "img/inside_school.jpeg"
   },
   {
     name: "Ask Out",
     "button text": ["Charm", "Dodge", "Run"],
     "button functions": [charm, dodge, goRestaurant],
-    text: "You are asking out a boy."
+    text: "You are asking out a boy.",
+    currentView: "img/inside_school.jpeg"
   },
   {
     name: "Boy accepts date",
@@ -105,6 +108,7 @@ const locations = [
 button1.onclick = goBedroom;
 button2.onclick = goSchool;
 button3.onclick = askingOutJimmyJr;
+
 // view.img = "img/lost_game.png";
 // not exactly working
 
@@ -202,6 +206,7 @@ function askOut() {
   boyStats.style.display = "flex";
   boyName.innerText = boys[askingOut].name;
   boyHealthText.innerText = loveHealth;
+  boyView.src = boys.currentView;
 }
 
 function charm() {
