@@ -54,7 +54,7 @@ const locations = [
     "button functions": [goBedroom, goSchool, askingOutJimmyJr],
     text: "You are in the restaurant. You know your room is upstairs in the apartment.",
     //not sure if this is a good idea!
-    currentView: "img/inside-resturant-trial-2.png"
+    currentView: "img/inside-restaurant-trial-2.png"
   },
   {
     name: "Tina's Bedroom",
@@ -201,7 +201,7 @@ function askOut() {
   screen.style.display = "flex";
   boyStats.style.display = "flex";
   boyName.innerText = boys[askingOut].name;
-  boyHealthText.innerText = boyHealthText;
+  boyHealthText.innerText = loveHealth;
 }
 
 function charm() {

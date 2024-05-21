@@ -45,7 +45,7 @@ body {
   }
 
   #container {
-    flex-grow: 6;
+    height: 50vh;
     width: 67.5vw;
     border: 1px solid white;
     margin-bottom: 10px;
@@ -54,7 +54,7 @@ body {
   }
 
   #text {
-    flex-grow: 2.5;
+    height: 30vh;
     width: 67.5vw;
     margin-bottom: 5px;
     font-size: 2rem;
