@@ -88,7 +88,8 @@ const locations = [
     name: "rejected",
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
-    text: "You got rejected. &#x2620;"
+    text: "You got rejected. &#x2620;",
+    currentView: "img/lost_game.png"
   },
   { 
     name: "win", 
@@ -108,6 +109,8 @@ const locations = [
 button1.onclick = goBedroom;
 button2.onclick = goSchool;
 button3.onclick = askingOutJimmyJr;
+
+view.src = "img/inside-restaurant-trial-2.png";
 
 // view.img = "img/lost_game.png";
 // not exactly working
