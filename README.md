@@ -14,7 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-🔭 I’m currently working on a mock Bob's Burgers Role Playing Game (rpg) {next up is a SPA for my Roller Derby League!}
-🌱 I’m currently learning more about debugging
-💬 roller derby
+🔭 I’m currently working on a mock Bob's Burgers Role Playing Game (rpg) {next up is a SPA for my Roller Derby League!} <br />
+🌱 I’m currently learning more about debugging <br />
+💬 roller derby <br />
 😄 she/her
