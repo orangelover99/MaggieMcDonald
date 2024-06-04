@@ -14,7 +14,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-🔭 I’m currently working on a mock Bob's Burgers Role Playing Game (rpg) {next up is a SPA for my Roller Derby League!} <br />
+🔭 I’m currently working on a mock Bob's Burgers Role Playing Game (rpg) <br />
+Go to freeCodeCamp --> RPG to check it out! <br />
+{next up is a SPA for my Roller Derby League!} <br />
 🌱 I’m currently learning more about debugging <br />
 💬 roller derby <br />
 😄 she/her
